@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4MwACR84xJQ=",
+  "dgSpecHash": "k/SclmcbW/o=",
   "success": true,
   "projectFilePath": "C:\\Users\\ugans\\source\\repos\\Screen-Time\\ScreenTimeMonitor\\ScreenTimeMonitor.csproj",
   "expectedPackageFiles": [
@@ -59,8 +59,8 @@
     "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.2428\\microsoft.windows.sdk.buildtools.10.0.22621.2428.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240627000\\microsoft.windowsappsdk.1.5.240627000.nupkg.sha512",
+    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
+    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240607001\\microsoft.windowsappsdk.1.5.240607001.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",

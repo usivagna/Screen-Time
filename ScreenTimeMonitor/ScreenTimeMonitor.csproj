@@ -12,6 +12,7 @@
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling> <!-- if packaging -->
     <WindowsPackageType>None</WindowsPackageType>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <!-- Temporarily commented out until asset files are created
@@ -27,8 +28,8 @@
   -->
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240627000" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240607001" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
@@ -53,5 +54,7 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)' != 'true'">
     <HasPackageAndPublishMenuAddedByProject>true</HasPackageAndPublishMenuAddedByProject>
   </PropertyGroup>
+
+
 
 </Project>

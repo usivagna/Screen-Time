@@ -1,1 +1,0 @@
-C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\obj\Debug\net6.0-windows10.0.19041.0\ScreenTimeMonitor.csproj.AssemblyReference.cache

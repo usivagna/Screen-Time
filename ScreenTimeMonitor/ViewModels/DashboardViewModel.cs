@@ -91,7 +91,7 @@ namespace ScreenTimeMonitor.ViewModels
                 }
 
                 // Set most used app
-                MostUsedAppToday = topApps.FirstOrDefault().appName ?? "None";
+                MostUsedAppToday = topApps.FirstOrDefault().AppName ?? "None";
 
                 // Get currently active app (only for today)
                 if (date.Date == DateTime.Today)

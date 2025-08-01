@@ -67,7 +67,10 @@ namespace ScreenTimeMonitor.ViewModels
                 }
 
                 // Initialize dashboard
-                await _dashboardViewModel.LoadDataAsync();
+                if (DashboardViewModel.LoadDataCommand.CanExecute(null))
+                {
+                    await DashboardViewModel.LoadDataCommand.ExecuteAsync(null);
+                }
 
                 IsInitialized = true;
                 CurrentStatus = IsMonitoring ? "Monitoring active" : "Ready";
@@ -130,7 +133,10 @@ namespace ScreenTimeMonitor.ViewModels
                 await _dataService.StartUsageSessionAsync(application.Id, e.CurrentWindow.WindowTitle);
 
                 // Refresh dashboard data
-                await _dashboardViewModel.RefreshCurrentDataAsync();
+                if (DashboardViewModel.RefreshCurrentDataCommand.CanExecute(null))
+                {
+                    await DashboardViewModel.RefreshCurrentDataCommand.ExecuteAsync(null);
+                }
             }
             catch (Exception ex)
             {

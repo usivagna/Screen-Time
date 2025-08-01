@@ -1041,14 +1041,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.2428": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.5.240627000": {
+      "Microsoft.WindowsAppSDK/1.5.240607001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
@@ -3628,14 +3628,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.2428": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.5.240627000": {
+      "Microsoft.WindowsAppSDK/1.5.240607001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
@@ -6383,14 +6383,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.2428": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.5.240627000": {
+      "Microsoft.WindowsAppSDK/1.5.240607001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
@@ -9138,14 +9138,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.2428": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.5.240627000": {
+      "Microsoft.WindowsAppSDK/1.5.240607001": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
@@ -12344,10 +12344,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Microsoft.Windows.SDK.BuildTools/10.0.22621.2428": {
-      "sha512": "qCNAxtpkIvn/mTXLoj5uW80qPyPvNcnTPTLgm2U+d53LS75DT6iQSpLnkVYCvxuRLx4FYPAcKackwpc0cDZGUg==",
+    "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
+      "sha512": "7ZL2sFSioYm1Ry067Kw1hg0SCcW5kuVezC2SwjGbcPE61Nn+gTbH86T73G3LcEOVj0S3IZzNuE/29gZvOLS7VA==",
       "type": "package",
-      "path": "microsoft.windows.sdk.buildtools/10.0.22621.2428",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12516,7 +12516,7 @@
         "build/Microsoft.Windows.SDK.BuildTools.targets",
         "buildTransitive/Microsoft.Windows.SDK.BuildTools.props",
         "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets",
-        "microsoft.windows.sdk.buildtools.10.0.22621.2428.nupkg.sha512",
+        "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
         "microsoft.windows.sdk.buildtools.nuspec",
         "schemas/10.0.22621.0/winrt/AppxManifestSchema.xsd",
         "schemas/10.0.22621.0/winrt/AppxManifestSchema2010_v2.xsd",
@@ -12528,8 +12528,6 @@
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v11.xsd",
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v12.xsd",
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v13.xsd",
-        "schemas/10.0.22621.0/winrt/UapManifestSchema_v15.xsd",
-        "schemas/10.0.22621.0/winrt/UapManifestSchema_v15a.xsd",
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v2.xsd",
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v3.xsd",
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v4.xsd",
@@ -12539,10 +12537,10 @@
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
-    "Microsoft.WindowsAppSDK/1.5.240627000": {
-      "sha512": "qzzWG8rxZyzKzBuUdwr4ApezMINf+NT2b8EiEE5fchczNJJmDwlHImMWxX1pHK1W8Yby99alqLyC8DB0fIrhuA==",
+    "Microsoft.WindowsAppSDK/1.5.240607001": {
+      "sha512": "hwPYYUGPlneZi7Uwhm2zAIzSnvGGoL1bIqlisba7Adi5fYbwsj1GvGqiFiyYxRV9bhs3ykQNnJ1LW1cdXvvLiQ==",
       "type": "package",
-      "path": "microsoft.windowsappsdk/1.5.240627000",
+      "path": "microsoft.windowsappsdk/1.5.240607001",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -13016,7 +13014,7 @@
         "manifests/Microsoft.InteractiveExperiences.manifest",
         "manifests/Microsoft.WindowsAppSdk.Foundation.manifest",
         "manifests/manifests/Microsoft.WindowsAppSdk.WinUI.manifest",
-        "microsoft.windowsappsdk.1.5.240627000.nupkg.sha512",
+        "microsoft.windowsappsdk.1.5.240607001.nupkg.sha512",
         "microsoft.windowsappsdk.nuspec",
         "runtimes/win-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
         "runtimes/win-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
@@ -17457,8 +17455,8 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.8",
       "Microsoft.Extensions.DependencyInjection >= 8.0.0",
       "Microsoft.Extensions.Hosting >= 8.0.0",
-      "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.2428",
-      "Microsoft.WindowsAppSDK >= 1.5.240627000"
+      "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.756",
+      "Microsoft.WindowsAppSDK >= 1.5.240607001"
     ]
   },
   "packageFolders": {
@@ -17525,11 +17523,11 @@
           },
           "Microsoft.Windows.SDK.BuildTools": {
             "target": "Package",
-            "version": "[10.0.22621.2428, )"
+            "version": "[10.0.22621.756, )"
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.5.240627000, )"
+            "version": "[1.5.240607001, )"
           }
         },
         "imports": [
