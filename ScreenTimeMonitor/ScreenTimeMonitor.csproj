@@ -7,6 +7,7 @@
     <RootNamespace>ScreenTimeMonitor</RootNamespace>
     <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
     <Platform>ARM64</Platform>
+    <SelfContained>true</SelfContained>
     <UseWPF>false</UseWPF> <!-- Set true if using WPF -->
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling> <!-- if packaging -->
