@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScreenTimeMonitor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d92a898c17bee8dfd416887289dfd13440cebba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66a7aebf0eda4d07f46f3bf6bbd289804bb07828")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScreenTimeMonitor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScreenTimeMonitor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

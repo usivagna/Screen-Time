@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k/SclmcbW/o=",
+  "dgSpecHash": "gyjmYYqB5GQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\ugans\\source\\repos\\Screen-Time\\ScreenTimeMonitor\\ScreenTimeMonitor.csproj",
   "expectedPackageFiles": [
@@ -169,17 +169,6 @@
     "C:\\Users\\ugans\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.18\\microsoft.netcore.app.runtime.win-x86.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.18\\microsoft.netcore.app.runtime.win-x64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.18\\microsoft.netcore.app.runtime.win-arm64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.18\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.18\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\8.0.18\\microsoft.windowsdesktop.app.runtime.win-arm64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.18\\microsoft.aspnetcore.app.runtime.win-x86.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.18\\microsoft.aspnetcore.app.runtime.win-x64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\8.0.18\\microsoft.aspnetcore.app.runtime.win-arm64.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\8.0.18\\microsoft.netcore.app.host.win-x86.8.0.18.nupkg.sha512",
-    "C:\\Users\\ugans\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.18\\microsoft.netcore.app.host.win-x64.8.0.18.nupkg.sha512",
     "C:\\Users\\ugans\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.56\\microsoft.windows.sdk.net.ref.10.0.19041.56.nupkg.sha512"
   ],
   "logs": []
