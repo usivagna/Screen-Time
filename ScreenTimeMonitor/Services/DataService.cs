@@ -1,3 +1,4 @@
+#nullable enable
 using Microsoft.EntityFrameworkCore;
 using ScreenTimeMonitor.Data;
 using ScreenTimeMonitor.Models;
@@ -27,17 +28,17 @@ namespace ScreenTimeMonitor.Services
             await _context.EnsureDatabaseCreatedAsync();
         }
 
-        public async Task<bool> DatabaseExistsAsync()
+        public Task<bool> DatabaseExistsAsync()
         {
             try
             {
                 var localFolder = ApplicationData.Current.LocalFolder.Path;
                 var dbPath = Path.Combine(localFolder, "ScreenTimeMonitor.db");
-                return File.Exists(dbPath);
+                return Task.FromResult(File.Exists(dbPath));
             }
             catch
             {
-                return false;
+                return Task.FromResult(false);
             }
         }
 

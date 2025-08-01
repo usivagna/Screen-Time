@@ -1,3 +1,4 @@
+#nullable enable
 using Microsoft.EntityFrameworkCore;
 using ScreenTimeMonitor.Models;
 using System.IO;

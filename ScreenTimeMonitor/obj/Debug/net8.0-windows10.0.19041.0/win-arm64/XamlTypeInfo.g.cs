@@ -7,15 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Diagnostics.CodeAnalysis;
+
 
 namespace ScreenTimeMonitor
 {
     public partial class App : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         private global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
@@ -32,7 +34,7 @@ namespace ScreenTimeMonitor
         /// <summary>
         /// GetXamlType(Type)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
         {
@@ -42,7 +44,7 @@ namespace ScreenTimeMonitor
         /// <summary>
         /// GetXamlType(String)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(string fullName)
         {
@@ -52,7 +54,7 @@ namespace ScreenTimeMonitor
         /// <summary>
         /// GetXmlnsDefinitions()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.XmlnsDefinition[] GetXmlnsDefinitions()
         {
@@ -66,9 +68,9 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
     /// <summary>
     /// Main class for providing metadata for the app or library
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public sealed class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
+    public sealed partial class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
         private global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
@@ -110,7 +112,7 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlTypeInfoProvider
     {
@@ -221,28 +223,38 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
 
         string[] _typeNameTable = null;
         global::System.Type[] _typeTable = null;
-
+        
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
+            _typeNameTable = new string[13];
             _typeNameTable[0] = "ScreenTimeMonitor.MainWindow";
             _typeNameTable[1] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[2] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[3] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[4] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "Int32";
-            _typeNameTable[7] = "Boolean";
+            _typeNameTable[2] = "ScreenTimeMonitor.Views.DashboardPage";
+            _typeNameTable[3] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[5] = "ScreenTimeMonitor.Views.ReportsPage";
+            _typeNameTable[6] = "ScreenTimeMonitor.Views.SettingsPage";
+            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[8] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[9] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "Int32";
+            _typeNameTable[12] = "Boolean";
 
-            _typeTable = new global::System.Type[8];
+            _typeTable = new global::System.Type[13];
             _typeTable[0] = typeof(global::ScreenTimeMonitor.MainWindow);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[2] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[3] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[4] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::System.Int32);
-            _typeTable[7] = typeof(global::System.Boolean);
+            _typeTable[2] = typeof(global::ScreenTimeMonitor.Views.DashboardPage);
+            _typeTable[3] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[5] = typeof(global::ScreenTimeMonitor.Views.ReportsPage);
+            _typeTable[6] = typeof(global::ScreenTimeMonitor.Views.SettingsPage);
+            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[9] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::System.Int32);
+            _typeTable[12] = typeof(global::System.Boolean);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -278,8 +290,17 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
         }
 
         private object Activate_0_MainWindow() { return new global::ScreenTimeMonitor.MainWindow(); }
-        private object Activate_2_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
-        private void VectorAdd_4_IList(object instance, object item)
+        private object Activate_2_DashboardPage() { return new global::ScreenTimeMonitor.Views.DashboardPage(); }
+        private object Activate_5_ReportsPage() { return new global::ScreenTimeMonitor.Views.ReportsPage(); }
+        private object Activate_6_SettingsPage() { return new global::ScreenTimeMonitor.Views.SettingsPage(); }
+        private object Activate_7_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private void StaticInitializer_0_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ScreenTimeMonitor.MainWindow).TypeHandle);
+        private void StaticInitializer_2_DashboardPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ScreenTimeMonitor.Views.DashboardPage).TypeHandle);
+        private void StaticInitializer_5_ReportsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ScreenTimeMonitor.Views.ReportsPage).TypeHandle);
+        private void StaticInitializer_6_SettingsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ScreenTimeMonitor.Views.SettingsPage).TypeHandle);
+        private void StaticInitializer_7_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_9_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void VectorAdd_9_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -299,6 +320,7 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
             case 0:   //  ScreenTimeMonitor.MainWindow
                 userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
                 userType.Activator = Activate_0_MainWindow;
+                userType.StaticInitializer = StaticInitializer_0_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -307,9 +329,42 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
                 xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 2:   //  ScreenTimeMonitor.Views.DashboardPage
+                userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_2_DashboardPage;
+                userType.StaticInitializer = StaticInitializer_2_DashboardPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 3:   //  Microsoft.UI.Xaml.Controls.Page
+                xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 4:   //  Microsoft.UI.Xaml.Controls.UserControl
+                xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  ScreenTimeMonitor.Views.ReportsPage
+                userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_ReportsPage;
+                userType.StaticInitializer = StaticInitializer_5_ReportsPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  ScreenTimeMonitor.Views.SettingsPage
+                userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_SettingsPage;
+                userType.StaticInitializer = StaticInitializer_6_SettingsPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_2_TreeViewNode;
+                userType.Activator = Activate_7_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_7_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -321,26 +376,27 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 3:   //  Microsoft.UI.Xaml.DependencyObject
+            case 8:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 9:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.CollectionAdd = VectorAdd_4_IList;
+                userType.StaticInitializer = StaticInitializer_9_IList;
+                userType.CollectionAdd = VectorAdd_9_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Object
+            case 10:   //  Object
                 xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Int32
+            case 11:   //  Int32
                 xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  Boolean
+            case 12:   //  Boolean
                 xamlType = new global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -356,19 +412,9 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
                 {
                     var otherProviders = new global::System.Collections.Generic.List<global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider>();
                     global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider provider;
-                    provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_Core_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
+                    provider = new global::Microsoft.UI.Xaml.XamlTypeInfo.XamlControlsXamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_DataGrid_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_Input_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_Layout_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_Markdown_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    provider = new global::CommunityToolkit.WinUI.UI.Controls.CommunityToolkit_WinUI_UI_Controls_Media_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    provider = new global::Microsoft.UI.Xaml.XamlTypeInfo.XamlControlsXamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     _otherProviders = otherProviders;
                 }
@@ -523,14 +569,15 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlSystemBaseType : global::Microsoft.UI.Xaml.Markup.IXamlType
+    internal partial class XamlSystemBaseType : global::Microsoft.UI.Xaml.Markup.IXamlType
     {
         string _fullName;
         global::System.Type _underlyingType;
 
-        public XamlSystemBaseType(string fullName, global::System.Type underlyingType)
+        public XamlSystemBaseType(string fullName, 
+            global::System.Type underlyingType)
         {
             _fullName = fullName;
             _underlyingType = underlyingType;
@@ -568,14 +615,15 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
     }
     
     internal delegate object Activator();
+    internal delegate void StaticInitializer();
     internal delegate void AddToCollection(object instance, object item);
     internal delegate void AddToDictionary(object instance, object key, object item);
     internal delegate object CreateFromStringMethod(string args);
     internal delegate object BoxInstanceMethod(object instance);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType
+    internal partial class XamlUserType : global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlSystemBaseType
         , global::Microsoft.UI.Xaml.Markup.IXamlType
     {
         global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider _provider;
@@ -593,7 +641,8 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
+            global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -659,7 +708,7 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
 
         override public void RunInitializer() 
         {
-            global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(UnderlyingType.TypeHandle);
+            StaticInitializer();
         }
 
         override public object CreateFromString(string input)
@@ -718,7 +767,7 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
                     }
                 }
 
-                return System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(this.UnderlyingType));
+                return global::System.Convert.ChangeType(value, global::System.Enum.GetUnderlyingType(this.UnderlyingType));
             }
             throw new global::System.ArgumentException(input, FullName);
         }
@@ -726,6 +775,7 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
         // --- End of Interface methods
 
         public Activator Activator { get; set; }
+        public StaticInitializer StaticInitializer { get; set; }
         public AddToCollection CollectionAdd { get; set; }
         public AddToDictionary DictionaryAdd { get; set; }
         public CreateFromStringMethod CreateFromStringMethod {get; set; }
@@ -804,9 +854,9 @@ namespace ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo
     internal delegate object Getter(object instance);
     internal delegate void Setter(object instance, object value);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2406")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
+    internal partial class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
     {
         global::ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
