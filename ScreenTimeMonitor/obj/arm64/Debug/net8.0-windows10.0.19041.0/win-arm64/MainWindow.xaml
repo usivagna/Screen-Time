@@ -3,7 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Screen Time Monitor">
     <Grid>
-        <TextBlock Text="Hello WinUI 3!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Simple Tab Navigation -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightGray" Padding="10">
+            <Button x:ConnectionId='3' x:Name="DashboardBtn" Content="Dashboard"                         Margin="0,0,10,0"/>
+            <Button x:ConnectionId='4' x:Name="ReportsBtn" Content="Reports"                       Margin="0,0,10,0"/>
+            <Button x:ConnectionId='5' x:Name="SettingsBtn" Content="Settings"                       />
+        </StackPanel>
+        
+        <!-- Content Frame -->
+        <Frame x:ConnectionId='2' x:Name="ContentFrame" Grid.Row="1"/>
     </Grid>
 </Window>
 

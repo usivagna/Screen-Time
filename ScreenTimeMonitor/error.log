@@ -1,0 +1,21 @@
+Unhandled exception: Microsoft.UI.Xaml.Markup.XamlParseException: The text associated with this error code could not be found.
+
+Cannot find a Resource with the Name/Key CardBackgroundFillColorDefaultBrush [Line: 16 Position: 41]
+   at WinRT.ExceptionHelpers.<ThrowExceptionForHR>g__Throw|38_0(Int32 hr)
+   at WinRT.ExceptionHelpers.ThrowExceptionForHR(Int32 hr)
+   at ABI.Microsoft.UI.Xaml.IApplicationStaticsMethods.LoadComponent(IObjectReference _obj, Object component, Uri resourceLocator, ComponentResourceLocation componentResourceLocation)
+   at Microsoft.UI.Xaml.Application.LoadComponent(Object component, Uri resourceLocator, ComponentResourceLocation componentResourceLocation)
+   at ScreenTimeMonitor.Views.DashboardPage.InitializeComponent() in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\Views\DashboardPage.g.i.cs:line 51
+   at ScreenTimeMonitor.Views.DashboardPage..ctor() in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\Views\DashboardPage.xaml.cs:line 13
+   at ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlTypeInfoProvider.Activate_2_DashboardPage() in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\XamlTypeInfo.g.cs:line 293
+   at ScreenTimeMonitor.ScreenTimeMonitor_XamlTypeInfo.XamlUserType.ActivateInstance() in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\XamlTypeInfo.g.cs:line 696
+   at ABI.Microsoft.UI.Xaml.Markup.IXamlType.Do_Abi_ActivateInstance_13(IntPtr thisPtr, IntPtr* result)
+--- End of stack trace from previous location ---
+   at WinRT.ExceptionHelpers.<ThrowExceptionForHR>g__Throw|38_0(Int32 hr)
+   at WinRT.ExceptionHelpers.ThrowExceptionForHR(Int32 hr)
+   at ABI.Microsoft.UI.Xaml.Controls.INavigateMethods.Navigate(IObjectReference _obj, Type sourcePageType)
+   at Microsoft.UI.Xaml.Controls.Frame.Navigate(Type sourcePageType)
+   at ScreenTimeMonitor.MainWindow..ctor() in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\MainWindow.xaml.cs:line 15
+   at ScreenTimeMonitor.App.OnLaunched(LaunchActivatedEventArgs args) in C:\Users\ugans\source\repos\Screen-Time\ScreenTimeMonitor\App.xaml.cs:line 48
+   at Microsoft.UI.Xaml.Application.Microsoft.UI.Xaml.IApplicationOverrides.OnLaunched(LaunchActivatedEventArgs args)
+   at ABI.Microsoft.UI.Xaml.IApplicationOverrides.Do_Abi_OnLaunched_0(IntPtr thisPtr, IntPtr args)
