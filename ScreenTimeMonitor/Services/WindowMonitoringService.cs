@@ -23,18 +23,6 @@ namespace ScreenTimeMonitor.Services
         [DllImport("user32.dll")]
         private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
 
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        private static extern IntPtr OpenProcess(uint dwDesiredAccess, bool bInheritHandle, uint dwProcessId);
-
-        [DllImport("psapi.dll", CharSet = CharSet.Unicode)]
-        private static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, StringBuilder lpBaseName, uint nSize);
-
-        [DllImport("kernel32.dll")]
-        private static extern bool CloseHandle(IntPtr hObject);
-
-        private const uint PROCESS_QUERY_INFORMATION = 0x0400;
-        private const uint PROCESS_VM_READ = 0x0010;
-
         #endregion
 
         private DispatcherQueueTimer? _monitoringTimer;
@@ -135,15 +123,27 @@ namespace ScreenTimeMonitor.Services
                 GetWindowThreadProcessId(windowHandle, out uint processId);
                 
                 // Get process information
-                using var process = Process.GetProcessById((int)processId);
+                string processName = "Unknown";
+                string executablePath = "Unknown";
+                
+                try
+                {
+                    using var process = Process.GetProcessById((int)processId);
+                    processName = process.ProcessName;
+                    executablePath = process.MainModule?.FileName ?? processName;
+                }
+                catch
+                {
+                    // If we can't get process info, use what we have
+                }
                 
                 var windowInfo = new WindowInfo
                 {
                     WindowHandle = windowHandle,
                     WindowTitle = windowTitle,
-                    ProcessName = process.ProcessName,
+                    ProcessName = processName,
                     ProcessId = (int)processId,
-                    ExecutablePath = GetProcessExecutablePath((int)processId) ?? process.ProcessName
+                    ExecutablePath = executablePath
                 };
 
                 return windowInfo;
@@ -153,35 +153,6 @@ namespace ScreenTimeMonitor.Services
                 Debug.WriteLine($"Error getting window info: {ex.Message}");
                 return null;
             }
-        }
-
-        private static string? GetProcessExecutablePath(int processId)
-        {
-            try
-            {
-                var processHandle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, (uint)processId);
-                if (processHandle == IntPtr.Zero)
-                    return null;
-
-                try
-                {
-                    var pathBuilder = new StringBuilder(1024);
-                    if (GetModuleFileNameEx(processHandle, IntPtr.Zero, pathBuilder, (uint)pathBuilder.Capacity) > 0)
-                    {
-                        return pathBuilder.ToString();
-                    }
-                }
-                finally
-                {
-                    CloseHandle(processHandle);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error getting process executable path: {ex.Message}");
-            }
-
-            return null;
         }
 
         private static bool IsSameWindow(WindowInfo? window1, WindowInfo? window2)
