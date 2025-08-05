@@ -1,14 +1,73 @@
 ﻿<Page x:Class="ScreenTimeMonitor.Views.ReportsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    
     <ScrollViewer>
-        <StackPanel Margin="20" Spacing="20">
-            <TextBlock Text="Reports" FontSize="24" FontWeight="Bold"/>
+        <!-- Main content layer with proper Mica layering -->
+        <StackPanel Margin="20" Spacing="20" 
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                    CornerRadius="8"
+                    Padding="24">
             
-            <Border Background="LightYellow" CornerRadius="8" Padding="20">
+            <TextBlock Text="Reports" 
+                       FontSize="28" 
+                       FontWeight="SemiBold"
+                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                       Margin="0,0,0,8"/>
+            
+            <!-- Reports Card -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20">
                 <StackPanel Spacing="15">
-                    <TextBlock Text="Usage Reports" FontWeight="SemiBold" FontSize="18"/>
-                    <TextBlock Text="Detailed reports coming soon..." FontStyle="Italic"/>
+                    <TextBlock Text="Usage Reports" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                    <TextBlock Text="Detailed reports and analytics coming soon..." 
+                               FontStyle="Italic"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                    
+                    <!-- Placeholder for future report features -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Grid.Column="0"
+                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
+                                CornerRadius="4"
+                                Padding="12"
+                                Margin="0,0,8,0">
+                            <StackPanel>
+                                <TextBlock Text="Daily Reports" 
+                                           FontWeight="SemiBold"
+                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                                <TextBlock Text="Coming Soon" 
+                                           FontSize="12"
+                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Grid.Column="1"
+                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
+                                CornerRadius="4"
+                                Padding="12"
+                                Margin="8,0,0,0">
+                            <StackPanel>
+                                <TextBlock Text="Weekly Analytics" 
+                                           FontWeight="SemiBold"
+                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                                <TextBlock Text="Coming Soon" 
+                                           FontSize="12"
+                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </StackPanel>
             </Border>
         </StackPanel>

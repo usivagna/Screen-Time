@@ -6,19 +6,19 @@
     <ScrollViewer>
         <!-- Main content layer with proper Mica layering -->
         <StackPanel Margin="20" Spacing="20" 
-                    Background="{ThemeResource LayerFillColorDefaultBrush}"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                     CornerRadius="8"
                     Padding="24">
             
             <TextBlock Text="Reports" 
                        FontSize="28" 
                        FontWeight="SemiBold"
-                       Foreground="{ThemeResource TextFillColorPrimaryBrush}"
+                       Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
                        Margin="0,0,0,8"/>
             
             <!-- Reports Card -->
-            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
                     BorderThickness="1"
                     CornerRadius="8" 
                     Padding="20">
@@ -26,10 +26,10 @@
                     <TextBlock Text="Usage Reports" 
                                FontWeight="SemiBold" 
                                FontSize="18"
-                               Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                     <TextBlock Text="Detailed reports and analytics coming soon..." 
                                FontStyle="Italic"
-                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                     
                     <!-- Placeholder for future report features -->
                     <Grid>
@@ -39,32 +39,32 @@
                         </Grid.ColumnDefinitions>
                         
                         <Border Grid.Column="0"
-                                Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                                 CornerRadius="4"
                                 Padding="12"
                                 Margin="0,0,8,0">
                             <StackPanel>
                                 <TextBlock Text="Daily Reports" 
                                            FontWeight="SemiBold"
-                                           Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                                 <TextBlock Text="Coming Soon" 
                                            FontSize="12"
-                                           Foreground="{ThemeResource TextFillColorTertiaryBrush}"/>
+                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Grid.Column="1"
-                                Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
                                 CornerRadius="4"
                                 Padding="12"
                                 Margin="8,0,0,0">
                             <StackPanel>
                                 <TextBlock Text="Weekly Analytics" 
                                            FontWeight="SemiBold"
-                                           Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
                                 <TextBlock Text="Coming Soon" 
                                            FontSize="12"
-                                           Foreground="{ThemeResource TextFillColorTertiaryBrush}"/>
+                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                             </StackPanel>
                         </Border>
                     </Grid>

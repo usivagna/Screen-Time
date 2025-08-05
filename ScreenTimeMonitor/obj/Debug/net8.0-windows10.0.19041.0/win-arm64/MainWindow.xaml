@@ -16,7 +16,7 @@
         
         <!-- Navigation with layered design following Mica guidelines -->
         <Border Grid.Row="0" 
-                Background="{ThemeResource LayerFillColorDefaultBrush}"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 Padding="10">
             <StackPanel Orientation="Horizontal">
                 <Button x:ConnectionId='3' x:Name="DashboardBtn" Content="Dashboard"                         Margin="0,0,10,0"/>
