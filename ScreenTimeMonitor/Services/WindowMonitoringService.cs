@@ -1,3 +1,4 @@
+#nullable enable
 using Microsoft.UI.Dispatching;
 using System;
 using System.Diagnostics;
