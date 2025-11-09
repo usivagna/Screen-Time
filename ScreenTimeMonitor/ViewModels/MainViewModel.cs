@@ -132,10 +132,15 @@ namespace ScreenTimeMonitor.ViewModels
                 // Start new usage session
                 await _dataService.StartUsageSessionAsync(application.Id, e.CurrentWindow.WindowTitle);
 
-                // Refresh dashboard data
-                if (DashboardViewModel.RefreshCurrentDataCommand.CanExecute(null))
+                // Refresh dashboard data less frequently - only refresh if initialized and not currently loading
+                // This prevents excessive database queries on rapid window switches
+                if (IsInitialized && DashboardViewModel != null && !DashboardViewModel.IsLoading)
                 {
-                    await DashboardViewModel.RefreshCurrentDataCommand.ExecuteAsync(null);
+                    // Debounce dashboard refresh - could be enhanced with a timer in production
+                    if (DashboardViewModel.RefreshCurrentDataCommand.CanExecute(null))
+                    {
+                        await DashboardViewModel.RefreshCurrentDataCommand.ExecuteAsync(null);
+                    }
                 }
             }
             catch (Exception ex)

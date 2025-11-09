@@ -76,11 +76,13 @@ namespace ScreenTimeMonitor.Services
         {
             var limits = new Dictionary<string, TimeSpan>();
             
-            foreach (var kvp in _localSettings.Values.Where(x => x.Key.StartsWith("UsageLimit_")))
+            // More efficient iteration without LINQ overhead
+            const string prefix = "UsageLimit_";
+            foreach (var kvp in _localSettings.Values)
             {
-                var appName = kvp.Key.Substring("UsageLimit_".Length);
-                if (kvp.Value is long ticks)
+                if (kvp.Key.StartsWith(prefix, StringComparison.Ordinal) && kvp.Value is long ticks)
                 {
+                    var appName = kvp.Key.Substring(prefix.Length);
                     limits[appName] = TimeSpan.FromTicks(ticks);
                 }
             }

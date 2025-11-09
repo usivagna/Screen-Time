@@ -66,31 +66,16 @@ namespace ScreenTimeMonitor.Services
             return Task.CompletedTask;
         }
 
-        public async Task<WindowInfo?> GetCurrentWindowAsync()
+        public Task<WindowInfo?> GetCurrentWindowAsync()
         {
-            return await Task.Run(() =>
-            {
-                try
-                {
-                    var windowHandle = GetForegroundWindow();
-                    if (windowHandle == IntPtr.Zero)
-                        return null;
-
-                    return GetWindowInfo(windowHandle);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Error getting current window: {ex.Message}");
-                    return null;
-                }
-            });
+            return Task.FromResult(GetCurrentWindowSync());
         }
 
-        private async void OnMonitoringTimerTick(object sender, object e)
+        private void OnMonitoringTimerTick(object sender, object e)
         {
             try
             {
-                var currentWindow = await GetCurrentWindowAsync();
+                var currentWindow = GetCurrentWindowSync();
                 
                 if (currentWindow != null && !IsSameWindow(currentWindow, _currentWindow))
                 {
@@ -108,6 +93,23 @@ namespace ScreenTimeMonitor.Services
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error in monitoring timer: {ex.Message}");
+            }
+        }
+
+        private WindowInfo? GetCurrentWindowSync()
+        {
+            try
+            {
+                var windowHandle = GetForegroundWindow();
+                if (windowHandle == IntPtr.Zero)
+                    return null;
+
+                return GetWindowInfo(windowHandle);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error getting current window: {ex.Message}");
+                return null;
             }
         }
 
@@ -129,9 +131,14 @@ namespace ScreenTimeMonitor.Services
                 
                 try
                 {
-                    using var process = Process.GetProcessById((int)processId);
-                    processName = process.ProcessName;
-                    executablePath = process.MainModule?.FileName ?? processName;
+                    // Use 'using' for proper disposal and avoid keeping process handle longer than needed
+                    using (var process = Process.GetProcessById((int)processId))
+                    {
+                        processName = process.ProcessName;
+                        // Cache MainModule to avoid multiple property accesses
+                        var mainModule = process.MainModule;
+                        executablePath = mainModule?.FileName ?? processName;
+                    }
                 }
                 catch
                 {

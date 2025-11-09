@@ -44,10 +44,11 @@ namespace ScreenTimeMonitor.ViewModels
 
                 var summaries = await _dataService.GetDailySummariesAsync(StartDate, EndDate);
                 
-                DailyReports.Clear();
+                // Create new list to minimize UI updates - batch construction before updating collection
+                var newReportList = new List<DailyReportViewModel>(summaries.Count);
                 foreach (var summary in summaries)
                 {
-                    DailyReports.Add(new DailyReportViewModel
+                    newReportList.Add(new DailyReportViewModel
                     {
                         Date = summary.Date,
                         TotalScreenTime = summary.TotalScreenTime,
@@ -55,6 +56,13 @@ namespace ScreenTimeMonitor.ViewModels
                         ProductivityScore = summary.ProductivityScore,
                         AppsUsedCount = summary.AppsUsedCount
                     });
+                }
+
+                // Replace collection contents efficiently
+                DailyReports.Clear();
+                foreach (var report in newReportList)
+                {
+                    DailyReports.Add(report);
                 }
             }
             catch (Exception ex)

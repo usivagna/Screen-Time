@@ -8,15 +8,13 @@ namespace ScreenTimeMonitor.Services
     /// </summary>
     public class NotificationService : INotificationService
     {
-        public async Task ShowNotificationAsync(string title, string message)
+        public Task ShowNotificationAsync(string title, string message)
         {
             // For now, we'll implement basic notifications
             // In a full implementation, you would use Windows App SDK notifications
-            await Task.Run(() =>
-            {
-                System.Diagnostics.Debug.WriteLine($"Notification: {title} - {message}");
-                // TODO: Implement proper toast notifications using Windows App SDK
-            });
+            System.Diagnostics.Debug.WriteLine($"Notification: {title} - {message}");
+            // TODO: Implement proper toast notifications using Windows App SDK
+            return Task.CompletedTask;
         }
 
         public async Task ShowUsageLimitWarningAsync(string appName, TimeSpan usageTime, TimeSpan limit)

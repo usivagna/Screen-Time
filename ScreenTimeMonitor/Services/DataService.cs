@@ -75,6 +75,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<List<Application>> GetApplicationsAsync()
         {
             return await _context.Applications
+                .AsNoTracking()
                 .OrderBy(a => a.Name)
                 .ToListAsync();
         }
@@ -132,6 +133,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<List<UsageSession>> GetUsageSessionsAsync(DateTime date)
         {
             return await _context.UsageSessions
+                .AsNoTracking()
                 .Include(s => s.Application)
                 .Where(s => s.Date.Date == date.Date)
                 .OrderBy(s => s.StartTime)
@@ -141,6 +143,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<List<UsageSession>> GetUsageSessionsAsync(DateTime startDate, DateTime endDate)
         {
             return await _context.UsageSessions
+                .AsNoTracking()
                 .Include(s => s.Application)
                 .Where(s => s.Date.Date >= startDate.Date && s.Date.Date <= endDate.Date)
                 .OrderBy(s => s.Date)
@@ -189,6 +192,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<List<DailySummary>> GetDailySummariesAsync(DateTime startDate, DateTime endDate)
         {
             return await _context.DailySummaries
+                .AsNoTracking()
                 .Where(s => s.Date.Date >= startDate.Date && s.Date.Date <= endDate.Date)
                 .OrderBy(s => s.Date)
                 .ToListAsync();
@@ -201,6 +205,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<TimeSpan> GetTotalScreenTimeAsync(DateTime date)
         {
             var totalSeconds = await _context.UsageSessions
+                .AsNoTracking()
                 .Where(s => s.Date.Date == date.Date && !s.IsActive)
                 .SumAsync(s => s.DurationSeconds);
 
@@ -210,6 +215,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<Dictionary<string, TimeSpan>> GetApplicationUsageAsync(DateTime date)
         {
             var usage = await _context.UsageSessions
+                .AsNoTracking()
                 .Include(s => s.Application)
                 .Where(s => s.Date.Date == date.Date && !s.IsActive)
                 .GroupBy(s => s.Application.Name)
@@ -225,6 +231,7 @@ namespace ScreenTimeMonitor.Services
         public async Task<List<(string AppName, TimeSpan Duration)>> GetTopApplicationsAsync(DateTime date, int count = 5)
         {
             var topApps = await _context.UsageSessions
+                .AsNoTracking()
                 .Include(s => s.Application)
                 .Where(s => s.Date.Date == date.Date && !s.IsActive)
                 .GroupBy(s => s.Application.Name)
@@ -242,70 +249,102 @@ namespace ScreenTimeMonitor.Services
 
         private static string DetermineApplicationCategory(string appName, string executablePath)
         {
-            var name = appName.ToLowerInvariant();
-            var path = executablePath?.ToLowerInvariant() ?? string.Empty;
+            // Use ReadOnlySpan for more efficient string comparisons
+            var nameSpan = appName.AsSpan();
+            var pathSpan = executablePath.AsSpan();
 
             // Productivity apps
-            if (IsProductivityApp(name, path))
+            if (IsProductivityApp(nameSpan, pathSpan))
                 return "Productivity";
 
             // Development tools
-            if (IsDevelopmentApp(name, path))
+            if (IsDevelopmentApp(nameSpan, pathSpan))
                 return "Development";
 
             // Web browsers
-            if (IsBrowserApp(name, path))
+            if (IsBrowserApp(nameSpan, pathSpan))
                 return "Web Browsing";
 
             // Entertainment
-            if (IsEntertainmentApp(name, path))
+            if (IsEntertainmentApp(nameSpan, pathSpan))
                 return "Entertainment";
 
             // Communication
-            if (IsCommunicationApp(name, path))
+            if (IsCommunicationApp(nameSpan, pathSpan))
                 return "Communication";
 
             // Games
-            if (IsGameApp(name, path))
+            if (IsGameApp(nameSpan, pathSpan))
                 return "Gaming";
 
             return "Uncategorized";
         }
 
-        private static bool IsProductivityApp(string name, string path)
+        private static bool IsProductivityApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var productivityApps = new[] { "word", "excel", "powerpoint", "outlook", "onenote", "notepad", "calculator" };
-            return productivityApps.Any(app => name.Contains(app));
+            ReadOnlySpan<string> productivityApps = new[] { "word", "excel", "powerpoint", "outlook", "onenote", "notepad", "calculator" };
+            foreach (var app in productivityApps)
+            {
+                if (name.Contains(app, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
-        private static bool IsDevelopmentApp(string name, string path)
+        private static bool IsDevelopmentApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var devApps = new[] { "visual studio", "vscode", "code", "devenv", "git", "cmd", "powershell", "terminal" };
-            return devApps.Any(app => name.Contains(app));
+            ReadOnlySpan<string> devApps = new[] { "visual studio", "vscode", "code", "devenv", "git", "cmd", "powershell", "terminal" };
+            foreach (var app in devApps)
+            {
+                if (name.Contains(app, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
-        private static bool IsBrowserApp(string name, string path)
+        private static bool IsBrowserApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var browsers = new[] { "chrome", "firefox", "edge", "safari", "opera", "brave" };
-            return browsers.Any(browser => name.Contains(browser));
+            ReadOnlySpan<string> browsers = new[] { "chrome", "firefox", "edge", "safari", "opera", "brave" };
+            foreach (var browser in browsers)
+            {
+                if (name.Contains(browser, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
-        private static bool IsEntertainmentApp(string name, string path)
+        private static bool IsEntertainmentApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var entertainmentApps = new[] { "spotify", "netflix", "youtube", "vlc", "media player", "photos" };
-            return entertainmentApps.Any(app => name.Contains(app));
+            ReadOnlySpan<string> entertainmentApps = new[] { "spotify", "netflix", "youtube", "vlc", "media player", "photos" };
+            foreach (var app in entertainmentApps)
+            {
+                if (name.Contains(app, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
-        private static bool IsCommunicationApp(string name, string path)
+        private static bool IsCommunicationApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var commApps = new[] { "teams", "slack", "discord", "skype", "zoom", "whatsapp", "telegram" };
-            return commApps.Any(app => name.Contains(app));
+            ReadOnlySpan<string> commApps = new[] { "teams", "slack", "discord", "skype", "zoom", "whatsapp", "telegram" };
+            foreach (var app in commApps)
+            {
+                if (name.Contains(app, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
-        private static bool IsGameApp(string name, string path)
+        private static bool IsGameApp(ReadOnlySpan<char> name, ReadOnlySpan<char> path)
         {
-            var gameIndicators = new[] { "steam", "epic", "game", "blizzard", "origin", "uplay" };
-            return gameIndicators.Any(indicator => name.Contains(indicator) || path.Contains(indicator));
+            ReadOnlySpan<string> gameIndicators = new[] { "steam", "epic", "game", "blizzard", "origin", "uplay" };
+            foreach (var indicator in gameIndicators)
+            {
+                if (name.Contains(indicator, StringComparison.OrdinalIgnoreCase) || 
+                    path.Contains(indicator, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
         #endregion
