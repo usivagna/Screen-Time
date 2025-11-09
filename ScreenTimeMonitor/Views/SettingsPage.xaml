@@ -55,15 +55,143 @@
                         <TextBlock Text="Monitoring"
                                    FontWeight="SemiBold"
                                    Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
-                        <ToggleSwitch Header="Start monitoring on app launch" IsOn="True"/>
-                        <ToggleSwitch Header="Monitor inactive windows" IsOn="False"/>
+                        <ToggleSwitch x:Name="StartMonitoringToggle" Header="Start monitoring on app launch" IsOn="True"/>
+                        <ToggleSwitch x:Name="StartWithWindowsToggle" Header="Start with Windows" IsOn="False"/>
+                        <ToggleSwitch x:Name="MinimizeToTrayToggle" Header="Minimize to system tray" IsOn="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <!-- Usage Limits Card -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Usage Limits" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                    
+                    <TextBlock Text="Set daily time limits for applications to help you stay on track. You'll receive notifications when approaching or exceeding limits."
+                               TextWrapping="Wrap"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                    
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Global Daily Limit"
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <NumberBox x:Name="GlobalLimitHours" 
+                                       Header="Hours" 
+                                       Value="8" 
+                                       Minimum="0" 
+                                       Maximum="24" 
+                                       SpinButtonPlacementMode="Inline"
+                                       Width="100"/>
+                            <NumberBox x:Name="GlobalLimitMinutes" 
+                                       Header="Minutes" 
+                                       Value="0" 
+                                       Minimum="0" 
+                                       Maximum="59" 
+                                       SpinButtonPlacementMode="Inline"
+                                       Width="100"/>
+                        </StackPanel>
                     </StackPanel>
                     
-                    <!-- Placeholder for future settings -->
-                    <TextBlock Text="Additional settings and preferences will be available in future updates." 
-                               FontStyle="Italic"
-                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"
-                               TextWrapping="Wrap"/>
+                    <Button Content="Set Application-Specific Limits" HorizontalAlignment="Left">
+                        <Button.Flyout>
+                            <Flyout>
+                                <Flyout.SystemBackdrop>
+                                    <DesktopAcrylicBackdrop/>
+                                </Flyout.SystemBackdrop>
+                                <StackPanel Spacing="12" MinWidth="300">
+                                    <TextBlock Text="Set limits for specific applications" 
+                                               FontWeight="SemiBold"/>
+                                    <ComboBox Header="Select Application" 
+                                              PlaceholderText="Choose an app"
+                                              Width="280"/>
+                                    <StackPanel Orientation="Horizontal" Spacing="10">
+                                        <NumberBox Header="Hours" Value="2" Minimum="0" Maximum="24" Width="130"/>
+                                        <NumberBox Header="Minutes" Value="0" Minimum="0" Maximum="59" Width="130"/>
+                                    </StackPanel>
+                                    <Button Content="Add Limit" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Stretch"/>
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </StackPanel>
+            </Border>
+            
+            <!-- Break Reminders Card -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Break Reminders" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                    
+                    <TextBlock Text="Get periodic reminders to take breaks and rest your eyes. Recommended for long work sessions."
+                               TextWrapping="Wrap"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                    
+                    <ToggleSwitch x:Name="BreakRemindersToggle" 
+                                  Header="Enable break reminders" 
+                                  IsOn="True"
+                                  Toggled="BreakRemindersToggle_Toggled"/>
+                    
+                    <StackPanel Spacing="8" x:Name="BreakReminderSettings">
+                        <TextBlock Text="Reminder Interval"
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                        <ComboBox x:Name="BreakIntervalCombo" 
+                                  SelectedIndex="1"
+                                  Width="200"
+                                  HorizontalAlignment="Left">
+                            <ComboBoxItem Content="Every 30 minutes"/>
+                            <ComboBoxItem Content="Every 1 hour"/>
+                            <ComboBoxItem Content="Every 2 hours"/>
+                            <ComboBoxItem Content="Every 3 hours"/>
+                        </ComboBox>
+                        
+                        <TextBlock Text="Break Duration"
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"
+                                   Margin="0,10,0,0"/>
+                        <ComboBox x:Name="BreakDurationCombo" 
+                                  SelectedIndex="0"
+                                  Width="200"
+                                  HorizontalAlignment="Left">
+                            <ComboBoxItem Content="5 minutes"/>
+                            <ComboBoxItem Content="10 minutes"/>
+                            <ComboBoxItem Content="15 minutes"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <!-- Notifications Card -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Notifications" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                    
+                    <StackPanel Spacing="8">
+                        <ToggleSwitch Header="Usage limit warnings" IsOn="True"/>
+                        <ToggleSwitch Header="Daily summary notifications" IsOn="True"/>
+                        <ToggleSwitch Header="Productivity tips" IsOn="False"/>
+                    </StackPanel>
                 </StackPanel>
             </Border>
             

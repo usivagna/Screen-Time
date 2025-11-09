@@ -26,6 +26,10 @@ namespace ScreenTimeMonitor
             builder.Services.AddSingleton<IWindowMonitoringService, WindowMonitoringService>();
             builder.Services.AddSingleton<ISettingsService, SettingsService>();
             builder.Services.AddSingleton<INotificationService, NotificationService>();
+            builder.Services.AddSingleton<IUsageLimitService, UsageLimitService>();
+            builder.Services.AddSingleton<IBreakReminderService, BreakReminderService>();
+            builder.Services.AddSingleton<ISystemTrayService, SystemTrayService>();
+            builder.Services.AddSingleton<IReportsService, ReportsService>();
             builder.Services.AddDbContext<AppDbContext>();
             
             Host = builder.Build();
