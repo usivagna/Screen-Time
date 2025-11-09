@@ -4,7 +4,7 @@ A Windows desktop application built with WinUI 3 and .NET 6 to monitor and track
 
 ## Features
 
-### Phase 1 (Current Implementation)
+### Phase 1 (Implemented)
 - **Active Window Tracking**: Monitors which applications are currently in focus
 - **Time Calculation**: Tracks duration spent in each application
 - **Data Storage**: Local SQLite database to store usage data
@@ -12,11 +12,11 @@ A Windows desktop application built with WinUI 3 and .NET 6 to monitor and track
 - **Reports**: Historical data viewing with date range selection
 - **Settings**: Configure monitoring preferences and application categories
 
-### Phase 2 (Planned)
-- **Daily/Weekly/Monthly Reports**: Enhanced analytics with charts
-- **Usage Limits & Notifications**: Set daily limits with toast notifications
-- **System Tray Integration**: Run in background with tray icon
-- **Break Reminders**: Periodic notifications to take breaks
+### Phase 2 (Implemented)
+- **Daily/Weekly/Monthly Reports**: Enhanced analytics with period selection and summary cards
+- **Usage Limits & Notifications**: Set daily limits with toast notifications when approaching or exceeding limits
+- **System Tray Integration**: Service framework for running in background with tray icon
+- **Break Reminders**: Periodic notifications to take breaks with configurable intervals
 
 ### Phase 3 (Future)
 - **Website Tracking**: Monitor browser tabs and websites
