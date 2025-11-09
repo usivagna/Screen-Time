@@ -76,10 +76,11 @@ namespace ScreenTimeMonitor.ViewModels
                 // Get top applications for the selected date
                 var topApps = await _dataService.GetTopApplicationsAsync(date, 5);
                 
-                TopAppsToday.Clear();
+                // Create new list to minimize UI updates - only update collection once
+                var newAppUsageList = new List<AppUsageViewModel>(topApps.Count);
                 foreach (var (appName, duration) in topApps)
                 {
-                    TopAppsToday.Add(new AppUsageViewModel
+                    newAppUsageList.Add(new AppUsageViewModel
                     {
                         ApplicationName = appName,
                         Duration = duration,
@@ -88,6 +89,13 @@ namespace ScreenTimeMonitor.ViewModels
                             ? (duration.TotalSeconds / TotalScreenTimeToday.TotalSeconds) * 100 
                             : 0
                     });
+                }
+
+                // Replace collection contents efficiently
+                TopAppsToday.Clear();
+                foreach (var item in newAppUsageList)
+                {
+                    TopAppsToday.Add(item);
                 }
 
                 // Set most used app

@@ -48,6 +48,7 @@ namespace ScreenTimeMonitor.Data
                 entity.Property(e => e.StartTime).IsRequired();
                 entity.Property(e => e.Date).IsRequired();
                 entity.HasIndex(e => new { e.Date, e.ApplicationId });
+                entity.HasIndex(e => e.IsActive); // Index for active session queries
                 
                 // Configure relationship
                 entity.HasOne(e => e.Application)

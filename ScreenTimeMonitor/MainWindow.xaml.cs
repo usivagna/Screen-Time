@@ -7,28 +7,40 @@ namespace ScreenTimeMonitor
 {
     public sealed partial class MainWindow : Window
     {
+        private Type? _currentPageType;
+
         public MainWindow()
         {
             this.InitializeComponent();
             this.Title = "Screen Time Monitor";
             
             // Navigate to dashboard by default
-            ContentFrame.Navigate(typeof(DashboardPage));
+            NavigateToPage(typeof(DashboardPage));
         }
 
         private void Dashboard_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(typeof(DashboardPage));
+            NavigateToPage(typeof(DashboardPage));
         }
 
         private void Reports_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(typeof(ReportsPage));
+            NavigateToPage(typeof(ReportsPage));
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(typeof(SettingsPage));
+            NavigateToPage(typeof(SettingsPage));
+        }
+
+        private void NavigateToPage(Type pageType)
+        {
+            // Only navigate if we're not already on this page
+            if (_currentPageType != pageType)
+            {
+                ContentFrame.Navigate(pageType);
+                _currentPageType = pageType;
+            }
         }
     }
 }
