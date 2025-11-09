@@ -54,6 +54,7 @@ namespace ScreenTimeMonitor.ViewModels
                 DataRetentionDays = await _settingsService.GetDataRetentionDaysAsync();
                 SelectedTheme = await _settingsService.GetThemeAsync();
                 
+                // Batch collection update to reduce UI update overhead
                 var categories = await _settingsService.GetAvailableCategoriesAsync();
                 AvailableCategories.Clear();
                 foreach (var category in categories)
