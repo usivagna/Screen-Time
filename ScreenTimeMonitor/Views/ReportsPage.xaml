@@ -16,58 +16,201 @@
                        Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
                        Margin="0,0,0,8"/>
             
-            <!-- Reports Card -->
+            <!-- Period Selector -->
             <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
                     BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
                     BorderThickness="1"
                     CornerRadius="8" 
                     Padding="20">
                 <StackPanel Spacing="15">
-                    <TextBlock Text="Usage Reports" 
+                    <TextBlock Text="Report Period" 
                                FontWeight="SemiBold" 
                                FontSize="18"
                                Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                    <TextBlock Text="Detailed reports and analytics coming soon..." 
-                               FontStyle="Italic"
-                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
                     
-                    <!-- Placeholder for future report features -->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Border Grid.Column="0"
-                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
-                                CornerRadius="4"
-                                Padding="12"
-                                Margin="0,0,8,0">
-                            <StackPanel>
-                                <TextBlock Text="Daily Reports" 
-                                           FontWeight="SemiBold"
-                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                                <TextBlock Text="Coming Soon" 
-                                           FontSize="12"
-                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
-                            </StackPanel>
-                        </Border>
-                        
-                        <Border Grid.Column="1"
-                                Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
-                                CornerRadius="4"
-                                Padding="12"
-                                Margin="8,0,0,0">
-                            <StackPanel>
-                                <TextBlock Text="Weekly Analytics" 
-                                           FontWeight="SemiBold"
-                                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-                                <TextBlock Text="Coming Soon" 
-                                           FontSize="12"
-                                           Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
-                            </StackPanel>
-                        </Border>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <Button x:Name="DailyReportBtn" Content="Daily" Click="ShowDailyReport_Click" Style="{StaticResource AccentButtonStyle}"/>
+                        <Button x:Name="WeeklyReportBtn" Content="Weekly" Click="ShowWeeklyReport_Click"/>
+                        <Button x:Name="MonthlyReportBtn" Content="Monthly" Click="ShowMonthlyReport_Click"/>
+                    </StackPanel>
+                    
+                    <!-- Date Navigation -->
+                    <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+                        <Button Content="◀ Previous" Click="PreviousPeriod_Click"/>
+                        <TextBlock x:Name="PeriodTitle" 
+                                   Text="Today" 
+                                   VerticalAlignment="Center"
+                                   FontWeight="SemiBold"
+                                   FontSize="16"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                        <Button Content="Next ▶" Click="NextPeriod_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <!-- Summary Cards -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Total Screen Time Card -->
+                <Border Grid.Column="0" 
+                        Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                        BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8" 
+                        Padding="16" 
+                        Margin="0,0,8,0">
+                    <StackPanel>
+                        <TextBlock Text="Total Time" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                   FontSize="14"/>
+                        <TextBlock x:Name="TotalTimeText" 
+                                   Text="0h 0m" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Average Time Card -->
+                <Border Grid.Column="1" 
+                        Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                        BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8" 
+                        Padding="16" 
+                        Margin="8,0">
+                    <StackPanel>
+                        <TextBlock Text="Average/Day" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                   FontSize="14"/>
+                        <TextBlock x:Name="AverageTimeText" 
+                                   Text="0h 0m" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Apps Used Card -->
+                <Border Grid.Column="2" 
+                        Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                        BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8" 
+                        Padding="16" 
+                        Margin="8,0">
+                    <StackPanel>
+                        <TextBlock Text="Apps Used" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                   FontSize="14"/>
+                        <TextBlock x:Name="AppsUsedText" 
+                                   Text="0" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Productivity Score Card -->
+                <Border Grid.Column="3" 
+                        Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                        BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8" 
+                        Padding="16" 
+                        Margin="8,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Productivity" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                   FontSize="14"/>
+                        <TextBlock x:Name="ProductivityText" 
+                                   Text="N/A" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"
+                                   Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            
+            <!-- Chart Placeholder -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20"
+                    Height="300">
+                <StackPanel>
+                    <TextBlock Text="Usage Chart" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                               Margin="0,0,0,10"/>
+                    <TextBlock Text="📊 Chart visualization will appear here" 
+                               FontSize="16"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="(Daily bars, weekly trends, or monthly breakdown)" 
+                               FontSize="12"
+                               FontStyle="Italic"
+                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Top Applications -->
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
+                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Top Applications" 
+                               FontWeight="SemiBold" 
+                               FontSize="18"
+                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                    
+                    <ListView x:Name="TopAppsListView" 
+                              SelectionMode="None"
+                              IsItemClickEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10" Margin="0,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock Grid.Column="0" 
+                                               Text="Application Name"
+                                               FontWeight="SemiBold"
+                                               Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                                    <TextBlock Grid.Column="1" 
+                                               Text="0h 0m"
+                                               Margin="10,0"
+                                               Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>
+                                    <ProgressBar Grid.Column="2" 
+                                                 Width="100" 
+                                                 Value="50"
+                                                 VerticalAlignment="Center"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackPanel>
             </Border>
         </StackPanel>

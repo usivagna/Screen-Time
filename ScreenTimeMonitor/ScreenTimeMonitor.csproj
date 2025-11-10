@@ -36,6 +36,7 @@
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Primitives" Version="7.1.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="H.NotifyIcon.WinUI" Version="2.1.4" />
   </ItemGroup>
 
   <!-- 
