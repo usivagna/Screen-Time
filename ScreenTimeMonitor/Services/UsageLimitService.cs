@@ -1,5 +1,4 @@
 using Microsoft.UI.Dispatching;
-using ScreenTimeMonitor.Services;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;

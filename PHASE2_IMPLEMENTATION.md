@@ -46,6 +46,8 @@ var monthlyReport = await reportsService.GetMonthlyReportAsync(2024, 1);
 
 Set time limits for applications and receive notifications when approaching or exceeding them.
 
+**Note:** The NotificationService currently uses debug output as a placeholder. Full Windows toast notification implementation using `Microsoft.Windows.AppNotifications` can be added when the package is properly configured.
+
 #### Components
 - **UsageLimitService**: Monitors application usage against configured limits
 - **NotificationService**: Enhanced with Windows App SDK toast notifications

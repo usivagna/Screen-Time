@@ -1,4 +1,3 @@
-using H.NotifyIcon;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
